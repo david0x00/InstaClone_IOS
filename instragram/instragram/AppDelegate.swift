@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        //configuration of using Parse code with heroku
+        let parseConfig = ParseClientConfiguration { (ParseMutableClientConfiguration) -> Void in
+            ParseMutableClientConfiguration.applicationId = "instagramIDAFLKJSJFFHlksfalkfjwla"
+            ParseMutableClientConfiguration.clientKey = "instagramKey18483kwfas;kf"
+            ParseMutableClientConfiguration.server = "http://instacloneios.herokuapp.com/parse"
+        }
+        
+        Parse.initializeWithConfiguration(parseConfig)
+        
+        
         // Override point for customization after application launch.
         return true
     }

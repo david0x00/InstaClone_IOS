@@ -25,6 +25,9 @@
 		2F101D361E08D7D7000F1FCA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F101D351E08D7D7000F1FCA /* Security.framework */; };
 		2F101D381E08D7E6000F1FCA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F101D371E08D7E6000F1FCA /* StoreKit.framework */; };
 		2F101D3A1E08D7F7000F1FCA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F101D391E08D7F7000F1FCA /* SystemConfiguration.framework */; };
+		2F101D3D1E098E5F000F1FCA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F101D3B1E098E5F000F1FCA /* Bolts.framework */; };
+		2F101D3E1E098E60000F1FCA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F101D3C1E098E5F000F1FCA /* Parse.framework */; };
+		2F101D401E09BED3000F1FCA /* IMG_1283.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 2F101D3F1E09BED3000F1FCA /* IMG_1283.JPEG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		2F101D351E08D7D7000F1FCA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2F101D371E08D7E6000F1FCA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2F101D391E08D7F7000F1FCA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2F101D3B1E098E5F000F1FCA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		2F101D3C1E098E5F000F1FCA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		2F101D3F1E09BED3000F1FCA /* IMG_1283.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1283.JPEG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +90,9 @@
 				2F101D301E08D7AA000F1FCA /* CoreGraphics.framework in Frameworks */,
 				2F101D2E1E08D79B000F1FCA /* CFNetwork.framework in Frameworks */,
 				2F101D2C1E08D78B000F1FCA /* AudioToolbox.framework in Frameworks */,
+				2F101D3D1E098E5F000F1FCA /* Bolts.framework in Frameworks */,
 				2F101D2A1E08D779000F1FCA /* libz.tbd in Frameworks */,
+				2F101D3E1E098E60000F1FCA /* Parse.framework in Frameworks */,
 				2F101D281E08D766000F1FCA /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +117,9 @@
 		2F101CEA1E08D707000F1FCA = {
 			isa = PBXGroup;
 			children = (
+				2F101D3F1E09BED3000F1FCA /* IMG_1283.JPEG */,
+				2F101D3B1E098E5F000F1FCA /* Bolts.framework */,
+				2F101D3C1E098E5F000F1FCA /* Parse.framework */,
 				2F101D391E08D7F7000F1FCA /* SystemConfiguration.framework */,
 				2F101D371E08D7E6000F1FCA /* StoreKit.framework */,
 				2F101D351E08D7D7000F1FCA /* Security.framework */,
@@ -275,6 +286,7 @@
 				2F101D041E08D707000F1FCA /* LaunchScreen.storyboard in Resources */,
 				2F101D011E08D707000F1FCA /* Assets.xcassets in Resources */,
 				2F101CFC1E08D707000F1FCA /* Main.storyboard in Resources */,
+				2F101D401E09BED3000F1FCA /* IMG_1283.JPEG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +453,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = instragram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = personalmachine.instragram;
@@ -452,6 +468,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = instragram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = personalmachine.instragram;
