@@ -11,11 +11,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
+    //variables used in the part about learning how to query and create
+    /*@IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var senderLbl: UILabel!
-    
+
     @IBOutlet weak var receiverLbl: UILabel!
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +62,7 @@ class ViewController: UIViewController {
         
         
         //retrieve data from the server
-        let receiver = String()
+        /*let receiver = String()
         let sender = String()
         let filepicture = [PFFile]()
         
@@ -95,7 +97,7 @@ class ViewController: UIViewController {
             } else {
                 print(error)
             }
-        }
+        }*/
         
         
         

@@ -28,6 +28,10 @@
 		2F101D3D1E098E5F000F1FCA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F101D3B1E098E5F000F1FCA /* Bolts.framework */; };
 		2F101D3E1E098E60000F1FCA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F101D3C1E098E5F000F1FCA /* Parse.framework */; };
 		2F101D401E09BED3000F1FCA /* IMG_1283.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 2F101D3F1E09BED3000F1FCA /* IMG_1283.JPEG */; };
+		2F101D421E09E12B000F1FCA /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F101D411E09E12B000F1FCA /* signInVC.swift */; };
+		2F101D441E09E155000F1FCA /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F101D431E09E155000F1FCA /* signUpVC.swift */; };
+		2F101D461E09E17E000F1FCA /* resetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F101D451E09E17E000F1FCA /* resetPasswordVC.swift */; };
+		2F101D481E0A1B2D000F1FCA /* blank_profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F101D471E0A1B2C000F1FCA /* blank_profile.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,10 @@
 		2F101D3B1E098E5F000F1FCA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		2F101D3C1E098E5F000F1FCA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		2F101D3F1E09BED3000F1FCA /* IMG_1283.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1283.JPEG; sourceTree = "<group>"; };
+		2F101D411E09E12B000F1FCA /* signInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
+		2F101D431E09E155000F1FCA /* signUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
+		2F101D451E09E17E000F1FCA /* resetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resetPasswordVC.swift; sourceTree = "<group>"; };
+		2F101D471E0A1B2C000F1FCA /* blank_profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blank_profile.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				2F101D3F1E09BED3000F1FCA /* IMG_1283.JPEG */,
+				2F101D471E0A1B2C000F1FCA /* blank_profile.jpg */,
 				2F101D3B1E098E5F000F1FCA /* Bolts.framework */,
 				2F101D3C1E098E5F000F1FCA /* Parse.framework */,
 				2F101D391E08D7F7000F1FCA /* SystemConfiguration.framework */,
@@ -157,6 +166,9 @@
 				2F101D021E08D707000F1FCA /* LaunchScreen.storyboard */,
 				2F101D051E08D707000F1FCA /* Info.plist */,
 				2F101CFD1E08D707000F1FCA /* instragram.xcdatamodeld */,
+				2F101D411E09E12B000F1FCA /* signInVC.swift */,
+				2F101D431E09E155000F1FCA /* signUpVC.swift */,
+				2F101D451E09E17E000F1FCA /* resetPasswordVC.swift */,
 			);
 			path = instragram;
 			sourceTree = "<group>";
@@ -286,6 +298,7 @@
 				2F101D041E08D707000F1FCA /* LaunchScreen.storyboard in Resources */,
 				2F101D011E08D707000F1FCA /* Assets.xcassets in Resources */,
 				2F101CFC1E08D707000F1FCA /* Main.storyboard in Resources */,
+				2F101D481E0A1B2D000F1FCA /* blank_profile.jpg in Resources */,
 				2F101D401E09BED3000F1FCA /* IMG_1283.JPEG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,7 +326,10 @@
 			files = (
 				2F101CF91E08D707000F1FCA /* ViewController.swift in Sources */,
 				2F101CFF1E08D707000F1FCA /* instragram.xcdatamodeld in Sources */,
+				2F101D421E09E12B000F1FCA /* signInVC.swift in Sources */,
+				2F101D441E09E155000F1FCA /* signUpVC.swift in Sources */,
 				2F101CF71E08D707000F1FCA /* AppDelegate.swift in Sources */,
+				2F101D461E09E17E000F1FCA /* resetPasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
