@@ -118,6 +118,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    func login() {
+        //remember user's login
+        let username: String? = NSUserDefaults.standardUserDefaults().stringForKey("username")
+        
+        //if logged in
+        if username != nil {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let myTabBar = storyboard.instantiateViewControllerWithIdentifier("tabBar") as! UITabBarController
+            window?.rootViewController = myTabBar
+        }
+        
+    }
 
 }
 

@@ -60,7 +60,7 @@ class ViewController: UIViewController {
             }
         }*/
         
-        
+        //----------------------------------------------------
         //retrieve data from the server
         /*let receiver = String()
         let sender = String()
@@ -98,6 +98,7 @@ class ViewController: UIViewController {
                 print(error)
             }
         }*/
+        //------------------------------------------------
         
         
         

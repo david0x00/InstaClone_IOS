@@ -46,7 +46,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KJk-hu-2Sc">
                                 <rect key="frame" x="228" y="249" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.043137254901960784" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.9882352941176471" green="0.71764705882352942" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -104,38 +104,50 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="gza-BK-3j0">
+                                        <rect key="frame" x="8" y="261" width="304" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="full name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="XfE-3v-zH9">
-                                        <rect key="frame" x="8" y="277" width="304" height="30"/>
+                                        <rect key="frame" x="8" y="299" width="304" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="website" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="NaE-1A-HxJ">
-                                        <rect key="frame" x="8" y="353" width="304" height="30"/>
+                                        <rect key="frame" x="8" y="375" width="304" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Zq-40-Nzm">
-                                        <rect key="frame" x="18" y="404" width="71" height="30"/>
+                                        <rect key="frame" x="18" y="426" width="71" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99607843137254903" green="0.7588825078640179" blue="0.24546807893053649" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signUpBtn_click:" destination="h7j-tt-bzf" eventType="touchUpInside" id="CDd-V3-jAj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vzm-XT-T3T">
-                                        <rect key="frame" x="231" y="404" width="71" height="30"/>
+                                        <rect key="frame" x="231" y="426" width="71" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.76871278590782244" green="0.79405822937979798" blue="0.75955561672252647" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelBtn_click:" destination="h7j-tt-bzf" eventType="touchUpInside" id="ItK-jz-IUg"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="bio" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="7QB-3D-ux0">
-                                        <rect key="frame" x="8" y="315" width="304" height="30"/>
+                                        <rect key="frame" x="8" y="337" width="304" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -148,10 +160,13 @@
                     <connections>
                         <outlet property="avaImg" destination="klT-az-Rxj" id="h5W-VY-IP6"/>
                         <outlet property="bioTxt" destination="7QB-3D-ux0" id="wWU-xo-ayu"/>
+                        <outlet property="cancelBtn" destination="QcG-Ri-fVR" id="HJa-in-Ud3"/>
+                        <outlet property="emailTxt" destination="gza-BK-3j0" id="r7C-aq-NnY"/>
                         <outlet property="fullnameTxt" destination="XfE-3v-zH9" id="62e-F4-1Ob"/>
                         <outlet property="passwordTxt" destination="DAU-eJ-rSf" id="z73-DX-SVE"/>
                         <outlet property="repeatPassword" destination="c4Y-YG-UhP" id="JmT-0f-dI8"/>
                         <outlet property="scrollView" destination="QcG-Ri-fVR" id="4DX-7j-gUc"/>
+                        <outlet property="signUpBtn" destination="QcG-Ri-fVR" id="6BQ-HW-lce"/>
                         <outlet property="usernameTxt" destination="4cA-kj-C7v" id="xoH-jy-OE4"/>
                         <outlet property="webTxt" destination="NaE-1A-HxJ" id="BxT-uq-vht"/>
                     </connections>
@@ -173,6 +188,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GyL-fR-krd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="773" y="318"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="k7e-fe-ntw">
+            <objects>
+                <viewController id="3pR-6q-2dw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tSa-RZ-YFj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="1ti-Pv-PG2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pl9-xI-13p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1556" y="318"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="OKo-nY-q00">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBar" id="51h-LT-b98" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ycg-a2-5cm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3pR-6q-2dw" kind="relationship" relationship="viewControllers" id="HFy-Su-sDz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zlz-tR-GQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="318"/>
         </scene>
     </scenes>
     <resources>
