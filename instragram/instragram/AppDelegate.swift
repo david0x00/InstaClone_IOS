@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.initializeWithConfiguration(parseConfig)
         
+        //login if possible
+        login()
         
         // Override point for customization after application launch.
         return true

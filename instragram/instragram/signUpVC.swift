@@ -69,8 +69,11 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         avaImg.userInteractionEnabled = true
         avaImg.addGestureRecognizer(avaTap)
         
+        
+        //allignment  -- DOOO LATER
+        avaImg.frame = CGRectMake(self.view.frame.size.width / 2 - 40, 40, 80, 80)
 
-        // Do any additional setup after loading the view.
+        
     }
     
     //load image function
@@ -176,12 +179,18 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                 appDelegate.login()
                 
             } else {
-                print(error?.localizedDescription)
+                //show alert message
+                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
+                let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+                alert.addAction(ok)
+                self.presentViewController(alert, animated: true, completion: nil)
             }
         }
     }
     
     @IBAction func cancelBtn_click(sender: AnyObject) {
+        //hide keyboard
+        self.view.endEditing(true)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

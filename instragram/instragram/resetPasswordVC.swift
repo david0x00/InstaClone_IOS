@@ -7,9 +7,57 @@
 //
 
 import UIKit
+import Parse
 
 class resetPasswordVC: UIViewController {
+    
+    @IBOutlet weak var emailTxt: UITextField!
+    
+    @IBOutlet weak var resetBtn: UIButton!
+    @IBOutlet weak var cancelBtn: UIButton!
 
+    
+    @IBAction func resetBtn_click(sender: AnyObject) {
+        //hide keyboard
+        self.view.endEditing(true)
+        
+        //if email text field is empty
+        if emailTxt.text!.isEmpty {
+            //show alert
+            let alert = UIAlertController(title: "Email Field", message: "is empty", preferredStyle: UIAlertControllerStyle.Alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+            alert.addAction(ok)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        //get email from server
+        PFUser.requestPasswordResetForEmailInBackground(emailTxt.text!) { (success:Bool, error:NSError?) -> Void in
+            if success {
+                
+                //show alert message
+                let alert = UIAlertController(title: "Email for resetting password", message: "has been sent", preferredStyle: UIAlertControllerStyle.Alert)
+                //if ok is pressed then call dismiss function
+                let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                })
+                alert.addAction(ok)
+                self.presentViewController(alert, animated: true, completion: nil)
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
+        
+    }
+    
+    @IBAction func cancelBtn_click(sender: AnyObject) {
+        //hide keyboard
+        self.view.endEditing(true)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -32,6 +32,10 @@
 		2F101D441E09E155000F1FCA /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F101D431E09E155000F1FCA /* signUpVC.swift */; };
 		2F101D461E09E17E000F1FCA /* resetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F101D451E09E17E000F1FCA /* resetPasswordVC.swift */; };
 		2F101D481E0A1B2D000F1FCA /* blank_profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F101D471E0A1B2C000F1FCA /* blank_profile.jpg */; };
+		2F97D6421E0DA81D00072B2A /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F97D6411E0DA81D00072B2A /* Pacifico.ttf */; };
+		2F97D6441E0DA9C100072B2A /* space_bakground.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F97D6431E0DA9C100072B2A /* space_bakground.jpeg */; };
+		2F97D6461E0DCD6E00072B2A /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F97D6451E0DCD6E00072B2A /* homeVC.swift */; };
+		2F97D6481E0DCDAF00072B2A /* headerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F97D6471E0DCDAF00072B2A /* headerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,10 @@
 		2F101D431E09E155000F1FCA /* signUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
 		2F101D451E09E17E000F1FCA /* resetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resetPasswordVC.swift; sourceTree = "<group>"; };
 		2F101D471E0A1B2C000F1FCA /* blank_profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blank_profile.jpg; sourceTree = "<group>"; };
+		2F97D6411E0DA81D00072B2A /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
+		2F97D6431E0DA9C100072B2A /* space_bakground.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = space_bakground.jpeg; sourceTree = "<group>"; };
+		2F97D6451E0DCD6E00072B2A /* homeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
+		2F97D6471E0DCDAF00072B2A /* headerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +167,8 @@
 		2F101CF51E08D707000F1FCA /* instragram */ = {
 			isa = PBXGroup;
 			children = (
+				2F97D6431E0DA9C100072B2A /* space_bakground.jpeg */,
+				2F97D6411E0DA81D00072B2A /* Pacifico.ttf */,
 				2F101CF61E08D707000F1FCA /* AppDelegate.swift */,
 				2F101CF81E08D707000F1FCA /* ViewController.swift */,
 				2F101CFA1E08D707000F1FCA /* Main.storyboard */,
@@ -169,6 +179,8 @@
 				2F101D411E09E12B000F1FCA /* signInVC.swift */,
 				2F101D431E09E155000F1FCA /* signUpVC.swift */,
 				2F101D451E09E17E000F1FCA /* resetPasswordVC.swift */,
+				2F97D6451E0DCD6E00072B2A /* homeVC.swift */,
+				2F97D6471E0DCDAF00072B2A /* headerView.swift */,
 			);
 			path = instragram;
 			sourceTree = "<group>";
@@ -297,6 +309,8 @@
 			files = (
 				2F101D041E08D707000F1FCA /* LaunchScreen.storyboard in Resources */,
 				2F101D011E08D707000F1FCA /* Assets.xcassets in Resources */,
+				2F97D6421E0DA81D00072B2A /* Pacifico.ttf in Resources */,
+				2F97D6441E0DA9C100072B2A /* space_bakground.jpeg in Resources */,
 				2F101CFC1E08D707000F1FCA /* Main.storyboard in Resources */,
 				2F101D481E0A1B2D000F1FCA /* blank_profile.jpg in Resources */,
 				2F101D401E09BED3000F1FCA /* IMG_1283.JPEG in Resources */,
@@ -326,10 +340,12 @@
 			files = (
 				2F101CF91E08D707000F1FCA /* ViewController.swift in Sources */,
 				2F101CFF1E08D707000F1FCA /* instragram.xcdatamodeld in Sources */,
+				2F97D6461E0DCD6E00072B2A /* homeVC.swift in Sources */,
 				2F101D421E09E12B000F1FCA /* signInVC.swift in Sources */,
 				2F101D441E09E155000F1FCA /* signUpVC.swift in Sources */,
 				2F101CF71E08D707000F1FCA /* AppDelegate.swift in Sources */,
 				2F101D461E09E17E000F1FCA /* resetPasswordVC.swift in Sources */,
+				2F97D6481E0DCDAF00072B2A /* headerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +578,7 @@
 				2F101D201E08D707000F1FCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F101D211E08D707000F1FCA /* Build configuration list for PBXNativeTarget "instragramTests" */ = {
 			isa = XCConfigurationList;
@@ -570,6 +587,7 @@
 				2F101D231E08D707000F1FCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F101D241E08D707000F1FCA /* Build configuration list for PBXNativeTarget "instragramUITests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +596,7 @@
 				2F101D261E08D707000F1FCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
