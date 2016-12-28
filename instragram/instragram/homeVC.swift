@@ -7,22 +7,73 @@
 //
 
 import UIKit
-
-private let reuseIdentifier = "Cell"
+import Parse
 
 class homeVC: UICollectionViewController {
 
+    //refresher variable
+    var refresher: UIRefreshControl!
+    //size of page
+    var page : Int = 10
+    
+    var uuidArray = [String]()
+    
+    var picArray = [PFFile]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        //background color
+        collectionView?.backgroundColor = .whiteColor()
+        
+        //title name
+        self.navigationItem.title = PFUser.currentUser()?.username?.uppercaseString
     }
+    
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        return 0
+    }
+    
+
+    
+
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        //define header
+        let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", forIndexPath: indexPath) as! headerView
+        
+        //get users data with connections to collumns of PFUser class
+        header.fullnameLbl.text = (PFUser.currentUser()?.objectForKey("fullname") as? String)?.uppercaseString
+        header.webTxt.text = (PFUser.currentUser()?.objectForKey("web") as? String)
+        header.webTxt.sizeToFit()
+        header.bioLbl.text = PFUser.currentUser()?.objectForKey("bio") as? String
+        header.bioLbl.sizeToFit()
+        let avaQuery = PFUser.currentUser()?.objectForKey("ava") as! PFFile
+        avaQuery.getDataInBackgroundWithBlock { (data:NSData?, error:NSError?) -> Void in
+            //tested to make sure I got the image from the server.
+            let pic = UIImage(data: data!)
+            //let picjpg = UIImageJPEGRepresentation(pic!, 1)
+            //let filename = "/Users/davidnull/Desktop/myimg.jpg"
+            //picjpg?.writeToFile(filename, atomically: true)*/
+            
+            header.avaImg.image = pic
+        }
+        header.button.setTitle("edit profile", forState: UIControlState.Normal)
+        
+        return header
+        
+    }
+    
+    
+    
+    
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,24 +92,18 @@ class homeVC: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    /*override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
-    }
+    }*/
 
-
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    /*override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
     
         // Configure the cell
     
         return cell
-    }
+    }*/
 
     // MARK: UICollectionViewDelegate
 
