@@ -37,6 +37,9 @@
 		2F97D6441E0DA9C100072B2A /* space_bakground.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F97D6431E0DA9C100072B2A /* space_bakground.jpeg */; };
 		2F97D6461E0DCD6E00072B2A /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F97D6451E0DCD6E00072B2A /* homeVC.swift */; };
 		2F97D6481E0DCDAF00072B2A /* headerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F97D6471E0DCDAF00072B2A /* headerView.swift */; };
+		2FF85F541E140D11007AAD93 /* funnycat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2FF85F531E140D11007AAD93 /* funnycat.jpg */; };
+		2FF85F561E144C6E007AAD93 /* followersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF85F551E144C6E007AAD93 /* followersVC.swift */; };
+		2FF85F581E144CA8007AAD93 /* followersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF85F571E144CA8007AAD93 /* followersCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		2F97D6431E0DA9C100072B2A /* space_bakground.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = space_bakground.jpeg; sourceTree = "<group>"; };
 		2F97D6451E0DCD6E00072B2A /* homeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
 		2F97D6471E0DCDAF00072B2A /* headerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headerView.swift; sourceTree = "<group>"; };
+		2FF85F531E140D11007AAD93 /* funnycat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = funnycat.jpg; sourceTree = "<group>"; };
+		2FF85F551E144C6E007AAD93 /* followersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = followersVC.swift; sourceTree = "<group>"; };
+		2FF85F571E144CA8007AAD93 /* followersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = followersCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 		2F101CF51E08D707000F1FCA /* instragram */ = {
 			isa = PBXGroup;
 			children = (
+				2FF85F531E140D11007AAD93 /* funnycat.jpg */,
 				2F97D6431E0DA9C100072B2A /* space_bakground.jpeg */,
 				2F97D6411E0DA81D00072B2A /* Pacifico.ttf */,
 				2F101CF61E08D707000F1FCA /* AppDelegate.swift */,
@@ -184,6 +191,8 @@
 				2F97D6451E0DCD6E00072B2A /* homeVC.swift */,
 				2F97D6471E0DCDAF00072B2A /* headerView.swift */,
 				2F72A25B1E12B7C300E029FD /* pictureCell.swift */,
+				2FF85F551E144C6E007AAD93 /* followersVC.swift */,
+				2FF85F571E144CA8007AAD93 /* followersCell.swift */,
 			);
 			path = instragram;
 			sourceTree = "<group>";
@@ -313,6 +322,7 @@
 				2F101D041E08D707000F1FCA /* LaunchScreen.storyboard in Resources */,
 				2F101D011E08D707000F1FCA /* Assets.xcassets in Resources */,
 				2F97D6421E0DA81D00072B2A /* Pacifico.ttf in Resources */,
+				2FF85F541E140D11007AAD93 /* funnycat.jpg in Resources */,
 				2F97D6441E0DA9C100072B2A /* space_bakground.jpeg in Resources */,
 				2F101CFC1E08D707000F1FCA /* Main.storyboard in Resources */,
 				2F101D481E0A1B2D000F1FCA /* blank_profile.jpg in Resources */,
@@ -344,11 +354,13 @@
 				2F101CF91E08D707000F1FCA /* ViewController.swift in Sources */,
 				2F101CFF1E08D707000F1FCA /* instragram.xcdatamodeld in Sources */,
 				2F97D6461E0DCD6E00072B2A /* homeVC.swift in Sources */,
+				2FF85F581E144CA8007AAD93 /* followersCell.swift in Sources */,
 				2F72A25C1E12B7C300E029FD /* pictureCell.swift in Sources */,
 				2F101D421E09E12B000F1FCA /* signInVC.swift in Sources */,
 				2F101D441E09E155000F1FCA /* signUpVC.swift in Sources */,
 				2F101CF71E08D707000F1FCA /* AppDelegate.swift in Sources */,
 				2F101D461E09E17E000F1FCA /* resetPasswordVC.swift in Sources */,
+				2FF85F561E144C6E007AAD93 /* followersVC.swift in Sources */,
 				2F97D6481E0DCDAF00072B2A /* headerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

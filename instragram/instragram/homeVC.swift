@@ -22,6 +22,40 @@ class homeVC: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //just doing this to test uploading a post
+        /*let data = UIImageJPEGRepresentation(UIImage(named: "funnycat.jpg")!, 0.5)
+        let catfile = PFFile(name: "picture.jpg", data: data!)
+        let table = PFObject(className: "posts")
+        table["username"] = PFUser.currentUser()?.username
+        table["uuid"] = 1
+        table["ava"] = catfile
+        table["pic"] = catfile
+        table["title"] = "My first post"
+        
+        table.saveInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
+            if success {
+                print("yay")
+            } else {
+                print(error?.localizedDescription)
+            }
+        }*/
+        
+        //create some followers
+        /*let table = PFObject(className: "follow")
+        table["follower"] = "yellow"
+        table["following"] = "bob"
+        table.saveInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
+            if success {
+                print("loaded follow data")
+            } else {
+                print(error?.localizedDescription)
+            }
+        }*/
+        
+        
+        //finished with testing
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -31,21 +65,86 @@ class homeVC: UICollectionViewController {
         
         //title name
         self.navigationItem.title = PFUser.currentUser()?.username?.uppercaseString
+        
+        //pull to refresh
+        refresher = UIRefreshControl()
+        refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        collectionView?.addSubview(refresher)
+        
+        //load posts
+        loadPosts()
     }
     
+    
+    //refreshing function
+    func refresh() {
+        collectionView?.reloadData()
+        refresher.endRefreshing()
+    }
+    
+    //load posts function
+    func loadPosts() {
+        let query = PFQuery(className: "posts")
+        query.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+        query.findObjectsInBackgroundWithBlock ({ (objects:[PFObject]?, error:NSError?) -> Void in
+            if error == nil {
+                var gag: Int
+                //clean up
+                self.uuidArray.removeAll(keepCapacity: false)
+                self.picArray.removeAll(keepCapacity: false)
+                //find objects related to our query
+                for object in objects! {
+                    //have to convert to Int before converting to String
+                    gag = object.valueForKey("uuid") as! Int
+                    //print("\(gag)")
+                    self.uuidArray.append("\(gag)")
+                    self.picArray.append(object.valueForKey("pic") as! PFFile)
+                }
+                
+                self.collectionView?.reloadData()
+            } else {
+                print(error?.localizedDescription)
+            }
+        })
+    }
+    
+    //cell number
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        // initial
+        //return picArray.count
+        
+        //test cells
+        return picArray.count * 20
+    }
+    
+    //cell config
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        //define cell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! pictureCell
+        //get picture from the pic array
+        //picArray[indexPath.row]
+        picArray[0].getDataInBackgroundWithBlock { (data:NSData?, error:NSError?) -> Void in
+            if error == nil {
+                cell.picImg.image = UIImage(data: data!)
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
+        
+        return cell
+        
     }
     
 
     
-
+    //header config
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         
         //define header
         let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", forIndexPath: indexPath) as! headerView
         
+        //STEP 1. Get user data
         //get users data with connections to collumns of PFUser class
         header.fullnameLbl.text = (PFUser.currentUser()?.objectForKey("fullname") as? String)?.uppercaseString
         header.webTxt.text = (PFUser.currentUser()?.objectForKey("web") as? String)
@@ -64,13 +163,88 @@ class homeVC: UICollectionViewController {
         }
         header.button.setTitle("edit profile", forState: UIControlState.Normal)
         
+        //STEP 2. count total followers
+        //count total posts
+        let posts = PFQuery(className: "posts")
+        posts.whereKey("username", equalTo:PFUser.currentUser()!.username!)
+        posts.countObjectsInBackgroundWithBlock ({ (count:Int32, error:NSError?) -> Void in
+            if error == nil {
+                header.posts.text = "\(count)"
+            }
+        })
+        
+        //count total followers
+        let followers = PFQuery(className: "follow")
+        followers.whereKey("following", equalTo: PFUser.currentUser()!.username!)
+        followers.countObjectsInBackgroundWithBlock ({ (count:Int32, error:NSError?) -> Void in
+            if error == nil {
+                header.followers.text = "\(count)"
+            }
+        })
+        
+        //count total followings
+        let followings = PFQuery(className: "follow")
+        followings.whereKey("follower", equalTo: PFUser.currentUser()!.username!)
+        followings.countObjectsInBackgroundWithBlock ({ (count:Int32, error:NSError?) -> Void in
+            if error == nil {
+                header.following.text = "\(count)"
+            }
+        })
+        
+        //STEP 3. Implement Tap Gestures
+        //tap posts
+        let postsTap = UITapGestureRecognizer(target: self, action: "postsTap")
+        postsTap.numberOfTapsRequired = 1
+        header.posts.userInteractionEnabled = true
+        header.posts.addGestureRecognizer(postsTap)
+        
+        //tap followers
+        let followersTap = UITapGestureRecognizer(target: self, action: "followersTap")
+        followersTap.numberOfTapsRequired = 1
+        header.followers.userInteractionEnabled = true
+        header.followers.addGestureRecognizer(followersTap)
+        
+        //tap followings
+        let followingsTap = UITapGestureRecognizer(target: self, action: "followingsTap")
+        followingsTap.numberOfTapsRequired = 1
+        header.following.userInteractionEnabled = true
+        header.following.addGestureRecognizer(followingsTap)
+        
+        
         return header
         
     }
     
     
+    //tapped posts. automatically scrolls down to the start of the posts if there are enough to scroll
+    func postsTap() {
+        if !picArray.isEmpty {
+            let index = NSIndexPath(forItem: 0, inSection: 0)
+            self.collectionView?.scrollToItemAtIndexPath(index, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+        }
+    }
     
+    //tapped followers label
+    func followersTap() {
+        user = PFUser.currentUser()!.username!
+        show = "followers"
+        //make reference
+        let followers = self.storyboard?.instantiateViewControllerWithIdentifier("followersVC") as! followersVC
+        //present it
+        self.navigationController?.pushViewController(followers, animated: true)
+    }
     
+    //tapped followings label
+    func followingsTap() {
+        
+        user = PFUser.currentUser()!.username!
+        show = "followings"
+        //make reference to followersVC
+        let followings = self.storyboard?.instantiateViewControllerWithIdentifier("followersVC") as! followersVC
+        //present to user
+        self.navigationController?.pushViewController(followings, animated: true)
+        
+    }
     
     
     
