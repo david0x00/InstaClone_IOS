@@ -59,6 +59,8 @@ class homeVC: UICollectionViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        self.collectionView?.alwaysBounceVertical = true
 
         //background color
         collectionView?.backgroundColor = .whiteColor()
@@ -73,6 +75,8 @@ class homeVC: UICollectionViewController {
         
         //load posts
         loadPosts()
+        
+        
     }
     
     
@@ -111,10 +115,10 @@ class homeVC: UICollectionViewController {
     //cell number
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // initial
-        //return picArray.count
+        return picArray.count
         
         //test cells
-        return picArray.count * 20
+        //return picArray.count * 20
     }
     
     //cell config
@@ -124,7 +128,7 @@ class homeVC: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! pictureCell
         //get picture from the pic array
         //picArray[indexPath.row]
-        picArray[0].getDataInBackgroundWithBlock { (data:NSData?, error:NSError?) -> Void in
+        picArray[indexPath.row].getDataInBackgroundWithBlock { (data:NSData?, error:NSError?) -> Void in
             if error == nil {
                 cell.picImg.image = UIImage(data: data!)
             } else {
@@ -245,6 +249,23 @@ class homeVC: UICollectionViewController {
         self.navigationController?.pushViewController(followings, animated: true)
         
     }
+    
+    //clicked logout
+    @IBAction func logout(sender: AnyObject) {
+        
+        PFUser.logOutInBackgroundWithBlock { (error:NSError?) -> Void in
+            if error == nil {
+                NSUserDefaults.standardUserDefaults().removeObjectForKey("username")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                
+                let signin = self.storyboard?.instantiateViewControllerWithIdentifier("signInVC") as! signInVC
+                let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.window?.rootViewController = signin
+            }
+        }
+        
+    }
+    
     
     
     
